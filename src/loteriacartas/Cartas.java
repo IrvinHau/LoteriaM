@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author 
+ * @author Equipo
  */
 public class Cartas extends javax.swing.JFrame {
     /**
