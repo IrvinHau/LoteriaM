@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author PC T-REX
+ * @author 
  */
 public class Cartas extends javax.swing.JFrame {
 
@@ -19,13 +19,16 @@ public class Cartas extends javax.swing.JFrame {
      */
     ImageIcon img[] = new ImageIcon[55];
     int contador=0;
+    int nCartas = 54;
+    int sacar;
+    
     public Cartas() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         
         int pos;
-        int nCartas = 54;
+        //int nCartas = 54;
         int[] numeros = new int[55];
         
         Stack< Integer> pCartas = new Stack< Integer>();
@@ -43,6 +46,7 @@ public class Cartas extends javax.swing.JFrame {
             numeros[i] = pCartas.get(i);
             //System.out.print(numeros[i]+" ");
         }
+        
         for (int i = 0; i < 54; i++) {
             img[i] = new ImageIcon(getClass().getClassLoader().getResource("imagenes/" + numeros[i] + ".png"));
         }
@@ -58,143 +62,202 @@ public class Cartas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
         jPanel1 = new javax.swing.JPanel();
         image = new javax.swing.JLabel();
-        sig = new javax.swing.JButton();
-        ant = new javax.swing.JButton();
         ncartas = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLPorSalir = new javax.swing.JLabel();
+        PTCARTA = new javax.swing.JLabel();
+        jLAbiertas = new javax.swing.JLabel();
+        jLNCARTAS = new javax.swing.JLabel();
+        BSacar = new javax.swing.JButton();
+        Bant = new javax.swing.JButton();
+        BIniciar = new javax.swing.JButton();
+        Bsig = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sig.setText("Siguiente");
-        sig.addActionListener(new java.awt.event.ActionListener() {
+        jLPorSalir.setText("Por salir");
+
+        PTCARTA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/unknown.png"))); // NOI18N
+
+        jLAbiertas.setText("Abiertas");
+
+        jLNCARTAS.setText("Número de carta:");
+
+        BSacar.setText("Sacar carta");
+        BSacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sigActionPerformed(evt);
+                BSacarActionPerformed(evt);
             }
         });
 
-        ant.setText("Anterior");
-        ant.addActionListener(new java.awt.event.ActionListener() {
+        Bant.setText("⬅");
+        Bant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                antActionPerformed(evt);
+                BantActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Sacar carta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BIniciar.setText("Iniciar");
+        BIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BIniciarActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Por salir");
+        Bsig.setText("➡");
+        Bsig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BsigActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ptc.JPG"))); // NOI18N
+        jLabel1.setText("Resumen");
+
+        jLabel3.setText("            LOTERIA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jLabel2)
-                        .addGap(195, 195, 195)
-                        .addComponent(ncartas, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(ant)
-                        .addGap(74, 74, 74)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                        .addComponent(sig)))
-                .addGap(89, 89, 89))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(182, 182, 182)
+                .addComponent(jLPorSalir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLAbiertas)
+                .addGap(331, 331, 331))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(66, 66, 66)
+                        .addComponent(PTCARTA)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(ncartas, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLNCARTAS)))
+                        .addGap(41, 41, 41))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(ncartas, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(132, 132, 132)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BSacar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(215, 215, 215)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(Bant, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bsig, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(215, 215, 215))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(349, 349, 349)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLPorSalir)
+                    .addComponent(jLAbiertas))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ant)
-                            .addComponent(sig)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLNCARTAS)
+                                .addGap(18, 18, 18)
+                                .addComponent(ncartas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(259, 259, 259))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(PTCARTA)
+                                .addGap(7, 7, 7)))
+                        .addComponent(BSacar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(90, 90, 90))
+                        .addGap(36, 36, 36)
+                        .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(Bant, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bsig, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sigActionPerformed
-        // TODO add your handling code here:
+    private void BSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSacarActionPerformed
+        // SACAR CARTA
+        //int sacar;
+        sacar = (int)(Math.random() * 54);
+        image.setIcon(img[sacar]);
+        ncartas.setText(""+(contador ++));
+        //image.setIcon(img[contador]);
+        //ncartas.setText(""+contador);
+        //contador = sacar;
+        
+    }//GEN-LAST:event_BSacarActionPerformed
+
+    private void BantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BantActionPerformed
+        // CARTA ANTERIOR
+        
+        if(contador==1){
+            contador=54;
+        }
+        contador--;
+        
+        image.setIcon(img[contador]);
+        ncartas.setText(""+contador);
+    }//GEN-LAST:event_BantActionPerformed
+
+    private void BIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIniciarActionPerformed
+        // BARAJEAR
+        contador = 0;
+        ncartas.setText(""+contador);
+        //contador = (int)(Math.random() *nCartas);
+    }//GEN-LAST:event_BIniciarActionPerformed
+
+    private void BsigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsigActionPerformed
+        // SIGUIENTE
         if(contador==53){
         contador=0;
         }
         contador++;
         image.setIcon(img[contador]);
         ncartas.setText(""+contador);
-    }//GEN-LAST:event_sigActionPerformed
-
-    private void antActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_antActionPerformed
-        // TODO add your handling code here:
-        if(contador==1){
-        contador=53;
-        }
-        contador--;
-        image.setIcon(img[contador]);
-        ncartas.setText(""+contador);
-    }//GEN-LAST:event_antActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-               int barajear;
-        barajear = (int)(Math.random() * 54);
-        image.setIcon(img[barajear]);
-        ncartas.setText(""+barajear);
-        contador = barajear;
-    }//GEN-LAST:event_jButton1ActionPerformed
+        //contador = (int)(Math.random() *nCartas);
+    }//GEN-LAST:event_BsigActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,13 +296,19 @@ public class Cartas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ant;
+    private javax.swing.JButton BIniciar;
+    private javax.swing.JButton BSacar;
+    private javax.swing.JButton Bant;
+    private javax.swing.JButton Bsig;
+    private javax.swing.JLabel PTCARTA;
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel image;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLAbiertas;
+    private javax.swing.JLabel jLNCARTAS;
+    private javax.swing.JLabel jLPorSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel ncartas;
-    private javax.swing.JButton sig;
     // End of variables declaration//GEN-END:variables
 }

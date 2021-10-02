@@ -7,7 +7,7 @@ package loteriacartas;
 
 /**
  *
- * @author PC T-REX
+ * @author 
  */
 public class LoteriaCartas {
 
